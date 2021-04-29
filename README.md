@@ -4,7 +4,9 @@
 
 ## Set up
 
-1. In this directory run 
+0. Make a copy of this directory if you want to set up more instances later.
+
+1. In the new directory run 
 `yarn create strapi-app app  --quickstart --template https://github.com/strapi/strapi-template-blog`
 
 2. When the app is running, press CTRL+C.
