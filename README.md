@@ -76,4 +76,28 @@ If Strapi is not on localhost but on a domain change the URL on row 12 to the UR
 
 11. The Strapi app should now be up and running with a number of articles.
 
+12. You can keep your Strapi project alive and reload it without downtime
+    with PM2.
+
+    `npm install pm2 -g`
+
+    In the `app` directory run `pm2 init`.
+
+    Replace the content of the newly generated file ecosystem.config.js with the following code:
+    
+```
+module.exports = {
+  apps: [
+    {
+      name: 'app',
+      script: 'npm',
+      args: 'start',
+    },
+  ],
+};
+```
+
+To start the app run `pm2 start ecosystem.config.js`.
+
+
 
