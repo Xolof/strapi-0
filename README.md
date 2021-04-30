@@ -11,11 +11,7 @@
 
 2. When the app is running, press CTRL+C.
 
-3. Change to the correct port.
-In `app/config/server.js` on line 3 change `1337` to:
-
-* `4001` for the Strapi instance with 100 posts
-* `4003` for the Strapi instance with 10000 posts.
+3. In `app/config/server.js` on line 3 the port number `1337` can be changed if needed.
 
 4. `cd app/` `NODE_ENV=development npm run build`
 
