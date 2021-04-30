@@ -2,14 +2,17 @@ const axios = require('axios');
 const dateStr = "2015-04-12T10:00:00.000Z";
 const firstDate = new Date(dateStr);
 const numPosts = 0;
-const port = 1337;
+const port = false;
+const liveURL = false;
+
+const baseURL = liveURL ? liveURL : `http://localhost:${port}`;
 
 createPosts();
 
 async function createPosts() {
     for (var i = 0; i < numPosts; i++) {
         const currentDate = new Date(firstDate.getTime() + (i * 60000));
-        await axios.post(`http://localhost:${port}/articles`,
+        await axios.post(`${baseURL}/articles`,
             {
                 "id": 1,
                 "title": `Post ${i + 1}` ,

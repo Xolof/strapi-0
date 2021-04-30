@@ -21,12 +21,14 @@ In `app/config/server.js` on line 3 change `1337` to:
 
 5. Run `npm run develop`
 
-   Go to `localhost:<port>/admin`. Create a user.
+   Go to `<strapi url>/admin`. Create a user.
 
    Go to Content-Types Builder >> Create new collection type.
    
    Choose "Page" as Display name.
    
+   Click Continue.
+
    Select Text.
    
    Enter "name" as Name.
@@ -59,7 +61,7 @@ In `app/config/server.js` on line 3 change `1337` to:
 
 6. Run `NODE_ENV=production npm run build` and then `NODE_ENV=production npm start`
 
-. Go to `localhost:<port>/admin`. Go to Articles and delete all articles.
+. Go to `<strapi url>/admin`. Go to Articles and delete all articles.
    Go to Settings >> Users & Permissons Plugin >> Roles >> Public.
    Under Permissions >> Application >> Article, check "count" and "create".
    Click "Save".    
@@ -68,11 +70,17 @@ In `app/config/server.js` on line 3 change `1337` to:
 
 9. In the file `create-script.js`, change `numPosts` to the number of posts to create.
 If Strapi is on localhost Change `port` to the port number of Strapi,
-If Strapi is not on localhost but on a domain change the URL on row 12 to the URL for Strapi.
+If Strapi is not on localhost but on a domain change the variable `liveURL` to the URL for Strapi.
 
 9. Run node create-script.js. Posts should be added in Strapi.
 
-10. Log in to the UI. Disallow public to post articles.
+10. Log in to the UI.
+    
+    Go to Settings >> Users & Permissons Plugin >> Roles >> Public.
+    
+    Under Permissions >> Application >> Article, uncheck "create".
+    
+    Click Save.
 
 11. The Strapi app should now be up and running with a number of articles.
 
@@ -89,7 +97,7 @@ If Strapi is not on localhost but on a domain change the URL on row 12 to the UR
 module.exports = {
   apps: [
     {
-      name: 'app',
+      name: '<name-for-the-app>',
       script: 'npm',
       args: 'start',
     },
